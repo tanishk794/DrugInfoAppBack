@@ -50,7 +50,7 @@ drugRouter.get("/api/companies", async (req, res) => {
     const companies = await Drug.distinct('company').sort();
     res.json({
       success: true,
-      data: ['', ...companies] // I have include empty option for "All Companies"
+      data: ['', ...companies] // empty option for "All Companies"
     });
   } catch (error) {
     res.status(500).json({
